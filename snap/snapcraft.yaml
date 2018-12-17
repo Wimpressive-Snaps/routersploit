@@ -1,0 +1,21 @@
+name: routersploit
+base: core18
+version: 'git'
+summary: Exploitation Framework for Embedded Devices
+description: |
+  The RouterSploit Framework is an open-source exploitation framework
+  dedicated to embedded devices.
+
+grade: stable
+confinement: classic
+
+parts:
+  routersploit:
+    plugin: python
+    source: .
+
+apps:
+  routersploit:
+    command: python3 $SNAP/bin/rsf.py
+    environment:
+      PYTHONPATH: $PYTHONPATH:$SNAP/lib/python3.6/site-packages
